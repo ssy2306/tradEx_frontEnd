@@ -1,0 +1,19 @@
+.Navbar {
+    text-align: center;
+    background-color: #111111;
+    padding: 0px;
+    height: 100%;
+  }
+  
+  .Navbar-logo {
+    align-items: center;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    
+  }
+  
+  
+  .Navbar-link {
+    color: #61dafb;
+  }
+  
