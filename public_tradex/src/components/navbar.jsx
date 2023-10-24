@@ -12,7 +12,7 @@ import AskbotImage from './navbarimages/askbot.svg';
 import LogoutImage from './navbarimages/logout.svg';
 import CommunityImage from './navbarimages/community.svg';
 import { Link } from 'react-router-dom';
-
+import { BootstrapButton } from './BootstrapButton';
 // function HomeIcon(props: SvgIconProps) {
 //     return (
 //         <SvgIcon {...props}>
@@ -23,10 +23,12 @@ import { Link } from 'react-router-dom';
 
 const Item = styled(Paper)({
     padding: '10px',
-    paddingTop: '5px',
     background: '#050505',
     color: '#1F1F1F',
     textAlign: 'center',
+    borderBottom: '20px',
+    borderColor: 'white',
+    margin: 0
 });
 
 const Item2 = styled(Paper)({
@@ -36,89 +38,53 @@ const Item2 = styled(Paper)({
     color: '#1F1F1F',
 });
 
-const BootstrapButton = styled(Button)({
-    boxShadow: 'none',
-    textTransform: 'none',
-    fontSize: 18,
-    padding: '10px 10px',
-    width: '100%',
-    border: '0px solid',
-    margin: '20px',
-    lineHeight: 1.5,
-    backgroundColor: 'none',
-    borderColor: 'none',
-    color: '#898989',
-    fontFamily: [
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-    ].join(','),
-    '&:hover': {
-        backgroundColor: '#111111',
-        borderColor: '#111111',
-        boxShadow: 'none',
-    },
-    '&:active': {
-        boxShadow: 'none',
-        backgroundColor: '#111111',
-        borderColor: 'none',
-        color: '#FFFFFF'
-    },
-    '&:focus': {
-        boxShadow: '0 0 0 0 #111111',
-    },
-});
 
 function navbar() {
     return (
-        <div className="Navbar">
-                    <Stack spacing={0}>
-                        <Item>
-                            <img src={logo} className='App-logo' alt="logo" width={120} height={36} />
-                            <p><b>______________________________</b></p>
-                        </Item>
+        <div className="Navbar" style={{ position: 'fixed', background: '#050505' }}>
+            <Stack spacing={1} >
+                <Item>
+                    <img src={logo} className='App-logo' alt="logo" width={120} height={36} style={{ paddingTop: 15 }} />
+                    <p>-------------------------------</p>
+                </Item>
 
-                        <Item>
-                            <Box sx={{ width: '100%' }}>
-                                <Stack spacing={2}>
-                                <Link to="/home" style={{margin: '0px', padding: '0px',  }}>
-                                    <BootstrapButton startIcon={<img src={HomeImage} alt="Home" style={{ width: '18px', height: '18px' }} />}>
-                                        Home
-                                    </BootstrapButton>
-                                </Link>
-                                    <BootstrapButton startIcon={<img src={HeatmapImage} alt="Heatmap" style={{ width: '18px', height: '18px' }} />}>
-                                        Heatmap
-                                    </BootstrapButton>
-                                    <BootstrapButton startIcon={<img src={CommunityImage} alt="Community" style={{ width: '18px', height: '18px' }} />}>
-                                        Community
-                                    </BootstrapButton>
-                                    <BootstrapButton startIcon={<img src={AskbotImage} alt="askbot" style={{ width: '18px', height: '18px' }} />}>
-                                        Ask bot
-                                    </BootstrapButton>
-                                </Stack>
-                            </Box>
-                        </Item>
-                        <Item2>
+                <Item>
+                    <Box sx={{ width: '100%' }}>
                         <Stack spacing={2}>
-                                    <BootstrapButton startIcon={<img src={FeedbackImage} alt="Feedback" style={{ width: '18px', height: '18px',  }} />} >
-                                        Feedback
-                                    </BootstrapButton>
-                                    <BootstrapButton startIcon={<img src={LogoutImage} alt="logout" style={{ width: '18px', height: '18px' }} />}>
-                                        Logout
-                                    </BootstrapButton>
-                                    <p><b>______________________________</b></p>
-                                    <p>Version 1.0</p>
-                                </Stack>
-                        </Item2>
+                            <Link to="/home">
+                                <BootstrapButton startIcon={<img src={HomeImage} alt="Home" style={{ width: '18px', height: '18px' }} />}>
+                                    Home
+                                </BootstrapButton>
+                            </Link>
+                            <Link to="/heatmap">
+                            <BootstrapButton startIcon={<img src={HeatmapImage} alt="Heatmap" style={{ width: '18px', height: '18px' }} />}>
+                                Heatmap
+                            </BootstrapButton></Link>
+                            <Link to="/community">
+                            <BootstrapButton startIcon={<img src={CommunityImage} alt="Community" style={{ width: '18px', height: '18px' }} />}>
+                                Community
+                            </BootstrapButton></Link>
+                            <Link to="/askbot">
+                            <BootstrapButton startIcon={<img src={AskbotImage} alt="askbot" style={{ width: '18px', height: '18px' }} />}>
+                                Ask bot
+                            </BootstrapButton></Link>
+                        </Stack>
+                    </Box>
+                </Item>
+                <Item2>
+                    <Stack spacing={2}>
+                        <BootstrapButton startIcon={<img src={FeedbackImage} alt="Feedback" style={{ width: '18px', height: '18px', }} />} >
+                            Feedback
+                        </BootstrapButton>
+                        <BootstrapButton startIcon={<img src={LogoutImage} alt="logout" style={{ width: '18px', height: '18px' }} />}>
+                            Logout
+                        </BootstrapButton>
+                        <p><b>______________________________</b></p>
+                        <p>Version 1.0</p>
                     </Stack>
-                                  
+                </Item2>
+            </Stack>
+
         </div>
     );
 }

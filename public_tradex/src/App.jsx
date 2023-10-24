@@ -4,10 +4,10 @@ import Navbar from "./components/navbar"
 
 
 function App() {
-  return (
-    <div style={{display:'flex'}}>
-     <Navbar />
-     <Outlet/>
+  return (  
+    <div style={{ display: 'flex' }}>
+        <Navbar />
+        <Outlet />
     </div>
   )
 }

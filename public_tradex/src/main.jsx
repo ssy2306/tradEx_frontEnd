@@ -6,6 +6,9 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import HomePage from "./components/HomePage";
+import Heatmap from "./components/heatmap";
+import Community from "./components/community";
+import Askbot from "./components/askbot";
 import App from "./App"
 
 const router = createBrowserRouter([
@@ -19,15 +22,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/heatmap",
-        element:<HomePage />
+        element:<Heatmap />
       },
       {
         path: "/community",
-        element:<HomePage />
+        element:<Community />
       },
       {
         path: "/askbot",
-        element:<HomePage />
+        element:<Askbot />
       },
     ]
   },
