@@ -79,6 +79,8 @@ function navbar() {
                         <BootstrapButton startIcon={<img src={LogoutImage} alt="logout" style={{ width: '18px', height: '18px' }} />}>
                             Logout
                         </BootstrapButton>
+                       
+                    
                         <p><b>______________________________</b></p>
                         <p>Version 1.0</p>
                     </Stack>

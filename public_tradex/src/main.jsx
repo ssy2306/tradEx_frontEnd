@@ -10,6 +10,7 @@ import Heatmap from "./components/heatmap";
 import Community from "./components/community";
 import Askbot from "./components/askbot";
 import App from "./App"
+import LoginPage from "./components/loginSignup/login";
 
 const router = createBrowserRouter([
   {
@@ -32,8 +33,12 @@ const router = createBrowserRouter([
         path: "/askbot",
         element:<Askbot />
       },
-    ]
+    ],
   },
+  {
+    path: "/login",
+    element:<LoginPage />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

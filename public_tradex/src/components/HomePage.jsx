@@ -8,6 +8,7 @@
   import { server } from "../main"
   import { Stack } from '@mui/material';
 
+  
   const theme = createTheme({
     palette: {
       background: {
@@ -25,24 +26,7 @@
       },
     },
   });
-
-  // const Item = styled(Paper)(({ theme }) => ({
-  //   backgroundColor: theme.palette.mode === 'dark' ? '#1F1F1F' : '#111111',
-  //   textAlign: 'center',
-  //   color: theme.palette.text.secondary,
-  //   padding: theme.spacing(1),
-  // }));
-
-  // const coinCardStyle = styled('div')({
-  //   backgroundColor: theme.palette.background.paper,
-  //   padding: theme.spacing(2),
-  //   textAlign: 'left  ',
-  //   color: theme.palette.text.secondary,
-  //   borderRadius: 10,
-  //   margin: 10,
-  //   width: '100%'
-  // });
-
+  
   const Item = styled('div')({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(2),
@@ -56,18 +40,15 @@
 
   function HomePage() {
     return (
-      <div>
+      <div style={{display: 'inline-flex'}}>
         <ThemeProvider theme={theme}>
           <Box sx={{
             bgcolor: 'pallete.background.paper',
             boxShadow: 1,
             borderRadius: 2,
-            padding: 2,
             minWidth: 300,
             margin: '15px',
-            width: '100%',
-            flexGrow: 1,
-            display: 'flex'
+         
           }}>
             <h1>Home</h1>
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} >
@@ -109,7 +90,7 @@
               </Grid>
           </Box>
         </ThemeProvider>
-      </div>
+        </div>
     );
   }
 

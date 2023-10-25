@@ -5,10 +5,12 @@ import Navbar from "./components/navbar"
 
 function App() {
   return (  
-    <div style={{ display: 'flex' }}>
-        <Navbar />
+    <>
+    <div  style={{ display: '-ms-flexbox'}}>
+         <Navbar />   
         <Outlet />
     </div>
+    </>
   )
 }
 export default App;
