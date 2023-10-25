@@ -1,51 +1,20 @@
-import '@fontsource/roboto/300.css';
 import React, { useState } from 'react';
-import './login.css';
+import { Box, Stack } from '@mui/material';
+import { createTheme } from '@mui/system';
+import LoginPageLeft from './LoginPageLeft';
+import LoginPageRight from './LoginPageRight';
+import theme from '../Theme';
 
 const LoginPage = () => {
-  const [formData, setFormData] = useState({ username: '', password: '' });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Submitted Data:', formData);
-  };
 
   return (
-    <div className="login-page">
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            value={formData.username}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <button type="submit">Login</button>
-        </div>
-      </form>
-    </div>
+    <Box sx={{ bgcolor: theme.palette.background.grey , display: '-ms-flexbox', height: '100%'}}>
+
+      <Stack direction='row' spacing={2} justifyContent="space-between">
+        <LoginPageLeft />
+        <LoginPageRight />
+      </Stack>
+    </Box>
   );
 };
 
