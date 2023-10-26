@@ -44,13 +44,14 @@ const loginUser = async (req, res) => {
       if (isPasswordValid) {
         const token = generateToken(user);
         res.cookie(token);
-        req.session.authToken = token;
-        req.session.user = user;
+        res.session.authToken = token;
+        res.session.user = user;
         console.log(req.session.user);
         console.log(token);
         res.status(200).send({
           success: true,
           message: "hewwo",
+          res: token
         });
       } else {
         res.status(401).send({
