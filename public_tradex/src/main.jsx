@@ -11,6 +11,7 @@ import Community from "./components/community";
 import Askbot from "./components/askbot";
 import App from "./App"
 import LoginPage from "./components/loginSignup/login";
+import Chart from "./components/Chart"
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         element:<Askbot />
       },
     ],
+  },
+  {
+    path: "/chart",
+    element:<Chart />
   },
   {
     path: "/login",

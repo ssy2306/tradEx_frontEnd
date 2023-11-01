@@ -13,6 +13,7 @@ import LogoutImage from './navbarimages/logout.svg';
 import CommunityImage from './navbarimages/community.svg';
 import { Link } from 'react-router-dom';
 import { BootstrapButton } from './BootstrapButton';
+
 // function HomeIcon(props: SvgIconProps) {
 //     return (
 //         <SvgIcon {...props}>
@@ -41,7 +42,7 @@ const Item2 = styled(Paper)({
 
 function navbar() {
     return (
-        <div className="Navbar" style={{ position: 'fixed', background: '#050505' }}>
+        <div className="Navbar" style={{ position: 'sticky',background: '#050505' }}>
             <Stack spacing={1} >
                 <Item>
                     <img src={logo} className='App-logo' alt="logo" width={120} height={36} style={{ paddingTop: 15 }} />
@@ -52,9 +53,9 @@ function navbar() {
                     <Box sx={{ width: '100%' }}>
                         <Stack spacing={2}>
                             <Link to="/home">
-                                <BootstrapButton startIcon={<img src={HomeImage} alt="Home" style={{ width: '18px', height: '18px' }} />}>
-                                    Home
-                                </BootstrapButton>
+                            <BootstrapButton startIcon={<img src={HomeImage} alt="Home" style={{ width: '18px', height: '18px' }} />}>
+                                Home
+                            </BootstrapButton>
                             </Link>
                             <Link to="/heatmap">
                             <BootstrapButton startIcon={<img src={HeatmapImage} alt="Heatmap" style={{ width: '18px', height: '18px' }} />}>

@@ -6,7 +6,7 @@ import Navbar from "./components/navbar"
 function App() {
   return (  
     <>
-    <div  style={{ display: '-ms-flexbox'}}>
+    <div  style={{ display: 'flex'}}>
          <Navbar />   
         <Outlet />
     </div>

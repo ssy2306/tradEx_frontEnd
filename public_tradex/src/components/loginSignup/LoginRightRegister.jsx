@@ -1,7 +1,7 @@
 import { Box, TextField } from '@mui/material';
 import React, { useState } from 'react';
 import theme from '../theme';
-const LoginPageRight = ({ formData, setFormData, handleLogin }) => {
+const LoginPageRightRegister = ({ formData, setFormData, handleLogin }) => {
     const handleInputChange = (e) => {
       const { name, value } = e.target;
       setFormData({ ...formData, [name]: value });
@@ -13,6 +13,33 @@ const LoginPageRight = ({ formData, setFormData, handleLogin }) => {
                 <p style={{fontSize: '1.4 rem', color: theme.palette.text.secondary, marginTop: 0, marginBottom: '3rem'}}> We,re happy to see you back here </p>
                 <form onSubmit={handleLogin}>
                 
+                <Box  component="form" noValidate  autoComplete="off" >
+                    <label htmlFor="name"  style={{color: theme.palette.text.secondary}}>Name</label><br />
+                    <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    style={{
+                        background: 'none',
+                        borderColor: theme.palette.text.logoColor,
+                        borderRadius: 5,
+                        height: 40,
+                        minWidth: 300,
+                        maxWidth: 500,
+                        width: '100%',
+                        fontSize: '1rem',
+                        padding: 2,
+                        paddingLeft: 10,
+                        borderBlockStyle: 'solid',
+
+                    }}
+                    />
+                </Box>
+
+
                 <Box  component="form" noValidate  autoComplete="off" >
                     <label htmlFor="username"  style={{color: theme.palette.text.secondary}}>Email</label><br />
                     <input
@@ -80,4 +107,4 @@ const LoginPageRight = ({ formData, setFormData, handleLogin }) => {
     );
 }
 
-export default LoginPageRight;
+export default LoginPageRightRegister;
