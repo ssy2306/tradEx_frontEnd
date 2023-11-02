@@ -4,7 +4,18 @@ Welcome to the tradEx frontend repository!
 ## Project Overview
 TradEx Insights is a dynamic web-based trading information platform designed to provide cryptocurrency enthusiasts and traders with a comprehensive and interactive experience. This platform combines real-time market data, community engagement features, and predictive machine learning algorithms to empower users in the cryptocurrency trading sphere.
 
+Backend: 
+The project "Tradez" leverages a robust backend stack, which comprises the following key technologies and components:
 
+Node.js: The project's backend is powered by Node.js, a server-side JavaScript runtime, known for its speed and scalability, enabling efficient request handling and response generation.
+
+Express.js: Express.js is employed as the web application framework, facilitating the development of RESTful APIs and the handling of HTTP requests, making it a reliable choice for building a solid foundation.
+
+Prisma ORM: Tradez utilizes Prisma, an open-source Object-Relational Mapping (ORM) tool, to interact with the database seamlessly. Prisma abstracts database operations and simplifies data management.
+
+SQL Database: The backend integrates a SQL database to securely store user data and application information. SQL databases are widely recognized for their structured data management and relational data capabilities.
+
+FrontEnd: 
 APIs and Libraries
 Mention any external APIs or libraries you've used in your project.
 
@@ -12,11 +23,16 @@ Coingecko API: Used to fetch cryptocurrency data.
 Material-UI: Used for styling and UI components.
 
 LOGIN:
-![image](https://github.com/ssy2306/tradEx_frontEnd/assets/77876285/4609d112-3ccc-4841-a36c-7536a7732049)
+![image](https://github.com/ssy2306/tradEx_frontEnd/assets/77876285/f01b6246-0724-4ae0-a7ae-1d6257b2dcbc)
 
 
 HEATMAP: 
-![image](https://github.com/ssy2306/tradEx_frontEnd/assets/77876285/1cf3f815-b2b9-4e4d-acf5-c43217c0d68c)
+![image](https://github.com/ssy2306/tradEx_frontEnd/assets/77876285/da9db3b2-452b-4682-b086-5e0318a45877)
+
+
+CHART: 
+![image](https://github.com/ssy2306/tradEx_frontEnd/assets/77876285/610234e8-05dc-4747-af8a-41b8fd1a5286)
+
 
 License:
 MIT License
