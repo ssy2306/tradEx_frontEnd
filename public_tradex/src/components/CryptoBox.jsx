@@ -27,7 +27,7 @@ const CryptoBox = ({ data }) => {
       <img src={image} alt={name} style={{ width: '40px', height: '40px' }} />
       <Typography variant="h6" style={{ fontSize: '15px'}}>{name}</Typography>
       <Typography variant="body2" style={{ fontSize: '10px'}} >
-        {isPositive ? `+${price_change_percentage_24h}%` : `${price_change_percentage_24h}%`}
+      <b>  {isPositive ? `+${price_change_percentage_24h}%` : `${price_change_percentage_24h}%`}</b>
       </Typography>
     </Box>
 

@@ -4,6 +4,7 @@ import { createTheme } from '@mui/system';
 import LoginPageLeft from './LoginPageLeft';
 import LoginPageRight from './LoginPageRight';
 import theme from '../Theme';
+
 import axios from 'axios';
 
 const LoginPage = () => {

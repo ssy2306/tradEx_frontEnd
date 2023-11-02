@@ -40,7 +40,8 @@
 
   function HomePage() {
     return (
-      <div style={{display: 'inline-flex'}}>
+      <div style={{display: 'inline-flex',  marginLeft: '270px',
+      }}>
         <ThemeProvider theme={theme}>
           <Box sx={{
             bgcolor: 'pallete.background.paper',

@@ -4,10 +4,12 @@ import { createTheme, padding } from '@mui/system';
 import theme from './Theme.jsx';
 import axios from 'axios';
 import CryptoBox from './CryptoBox.jsx';
+import Loader from './Loader.jsx'
 
 const heatmap = () => {
 
     const [cryptoData, setCryptoData] = useState([]);
+    const [loading, setLoading] = useState(true);
 
 const getTop100CryptoIds = async () => {
   try {
@@ -28,7 +30,7 @@ useEffect(() => {
       const top100CryptoIds = await getTop100CryptoIds();
   
       if (top100CryptoIds.length === 0) {
-        console.log('wait');;
+        console.log('wait');
       }
   
       axios
@@ -45,6 +47,7 @@ useEffect(() => {
         })
         .then((response) => {
           setCryptoData(response.data);
+          setLoading(false);
         })
         .catch((error) => {
           console.error('Error fetching data: ', error);
@@ -57,12 +60,20 @@ useEffect(() => {
 
 
     return ( 
-        <div style={{padding: '20px', paddingBottom: 0}}>
+        <div style={{ marginLeft: '270px',
+        paddingTop: '2rem', padding: '20px', paddingBottom: 0}}>
              <h2 style={{ fontSize: '2.5rem', paddingBottom: 0, margin: 0}} >Heatmap</h2>
                 <p style={{fontSize: '1.4 rem', color: theme.palette.text.secondary, marginTop: 0, marginBottom: '3rem'}}>We,re happy to see you back here </p>
                 <Box sx={{
                     display: 'flex',
                 }}>
+                     {loading ? ( // Display loading spinner when loading is true
+      <Box sx={{
+        alignItems: 'center',
+        flexDirection: 'column',
+        justifyContent: 'center',
+      }}> <Loader /> </Box>
+        ) : (
                 <Box
                     sx={{
                         paddingLeft: 2,
@@ -81,7 +92,9 @@ useEffect(() => {
                             <CryptoBox key={crypto.id} data={crypto} />
                         ))}
                 </Box>
+                 )}
                 </Box>
+                
         </div>
      );
 }

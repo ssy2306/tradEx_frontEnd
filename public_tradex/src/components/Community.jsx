@@ -1,8 +1,12 @@
+import { Box } from "@mui/system";
+
 const community = () => {
     return ( 
-        <div>
+        <Box sx={{
+            marginLeft: '270px'
+        }}>
             <h1>community</h1>
-        </div>
+        </Box>
      );
 }
  

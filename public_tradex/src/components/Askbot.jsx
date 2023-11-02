@@ -1,8 +1,12 @@
+import { Box } from "@mui/system";
+
 const askbot = () => {
     return ( 
-        <div>
+        <Box sx= {{
+            marginLeft: '270px',
+        }}>
             <h1>askbot</h1>
-        </div>
+        </Box>
      );
 }
  

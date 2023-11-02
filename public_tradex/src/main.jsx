@@ -24,7 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/heatmap",
-        element:<Heatmap />
+        element:<Heatmap />,
       },
       {
         path: "/community",
@@ -34,11 +34,11 @@ const router = createBrowserRouter([
         path: "/askbot",
         element:<Askbot />
       },
+      {
+        path: "/chart/:id",
+        element: <Chart />
+      }
     ],
-  },
-  {
-    path: "/chart",
-    element:<Chart />
   },
   {
     path: "/login",
