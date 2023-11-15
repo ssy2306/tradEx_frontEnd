@@ -31,7 +31,8 @@ HEATMAP:
 
 
 CHART: 
-![image](https://github.com/ssy2306/tradEx_frontEnd/assets/77876285/610234e8-05dc-4747-af8a-41b8fd1a5286)
+![image](https://github.com/ssy2306/tradEx_frontEnd/assets/77876285/42aab95a-e8a7-477c-a811-0244fa89c680)
+
 
 
 License:
