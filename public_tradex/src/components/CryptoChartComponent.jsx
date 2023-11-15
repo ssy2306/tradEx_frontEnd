@@ -41,6 +41,8 @@ const CryptoChartComponent = ({ cryptoChartData, chartRef }) => {
       <h2>Crypto Price Chart</h2>
       {chartData && <Line data={chartData} options={{
         responsive: true,
+        backgroundColor: 'white',
+        
       }} />}
     </div>
   );

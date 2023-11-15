@@ -27,7 +27,7 @@ const Chart = () => {
 
                 const chartResponse = await fetch(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=inr&days=1`);
                 if (!chartResponse.ok) {
-                  throw new Error(`Chart request failed with status ${chartResponse.status}`);
+                    throw new Error(`Chart request failed with status ${chartResponse.status}`);
                 }
                 const chartData = await chartResponse.json();
                 setChartData(chartData);
@@ -41,9 +41,9 @@ const Chart = () => {
         fetchCryptoData();
         return () => {
             if (chartRef.current) {
-              chartRef.current.destroy();
+                chartRef.current.destroy();
             }
-          };
+        };
     }, [id]);
 
     const getTopVolumes = () => {
@@ -70,7 +70,7 @@ const Chart = () => {
     const descriptionHtml = { __html: cryptoData.description.en };
     const isPositive = cryptoData.market_data.price_change_percentage_24h > 0;
     const price_change_percentage_24h = isPositive ? `+ ${cryptoData.market_data.price_change_percentage_24h}%` : `${cryptoData.market_data.price_change_percentage_24h}%`;
-    const bgColor = isPositive ? 'linear-gradient(to bottom left, #073b3a 0%, #21d375 100%)': 'linear-gradient(to bottom left, #801818 0%, #960018 100%)';
+    const bgColor = isPositive ? 'linear-gradient(to bottom left, #073b3a 0%, #21d375 100%)' : 'linear-gradient(to bottom left, #801818 0%, #960018 100%)';
 
 
     return (
@@ -103,24 +103,20 @@ const Chart = () => {
                 paddingLeft: 0,
                 alignItems: 'center'
             }}>
-                <p style={{ fontSize: '2rem', margin: 0, }}> {price_change_percentage_24h}</p><br /> 
-                Last updated - {cryptoData.last_updated}
-                <Box sx={{ display: 'flex'}}>
-                <img src={cryptoData.image.large} style={{ width: '60px', height: '60px', marginRight: 15, }} />
-              
-                <p style={{ fontSize: '2rem', margin: 0, }}><b>{cryptoData.name} {`(${cryptoData.symbol})`} </b></p>
-                 
-            </Box>
-            <Box>
-      {/* Your existing component code */}
-      {/* ... */}
+                <p style={{ fontSize: '2rem', margin: 0, }}> {price_change_percentage_24h}</p><br />
+                Last updated - {new Date(cryptoData.last_updated).toLocaleTimeString()}
+                <Box sx={{ display: 'flex' }}>
+                    <img src={cryptoData.image.large} style={{ width: '60px', height: '60px', marginRight: 15, }} />
 
-      {/* Display the chart */}
-      <Typography variant="h6">Price Chart (Last 24 Hours)</Typography>
-      <CryptoChartComponent cryptoChartData={chartData} chartRef={chartRef}/>
-    </Box>
+                    <p style={{ fontSize: '2rem', margin: 0, }}><b>{cryptoData.name} {`(${cryptoData.symbol})`} </b></p>
+
+                </Box>
+                <Box>
+                    <Typography variant="h6">Price Chart (Last 24 Hours)</Typography>
+                    <CryptoChartComponent cryptoChartData={chartData} chartRef={chartRef} />
+                </Box>
             </Box>
-            <b style={{ fontSize: '1.2rem'}}>Profile</b>
+            <b style={{ fontSize: '1.2rem' }}>Profile</b>
             <Typography variant="body1" dangerouslySetInnerHTML={descriptionHtml} />
             <Typography variant="h6">Number of Users</Typography>
             <Typography variant="body1">{cryptoData.watchlist_portfolio_users}K</Typography>
