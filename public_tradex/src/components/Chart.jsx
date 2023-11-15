@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
 import TopVolumesTable from './TopVolumesTable';
 import { Line } from 'react-chartjs-2';
+import CryptoChartComponent from './CryptoChartComponent';
 
 const Chart = () => {
     // Use the `useParams` hook to access the `id` parameter from the URL
@@ -22,15 +23,14 @@ const Chart = () => {
                 }
                 const data = await response.json();
                 setCryptoData(data);
-                console.log(data);
+                // console.log(data);
 
                 const chartResponse = await fetch(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=inr&days=1`);
                 if (!chartResponse.ok) {
                   throw new Error(`Chart request failed with status ${chartResponse.status}`);
                 }
                 const chartData = await chartResponse.json();
-                setChartData(chartData.prices);
-
+                setChartData(chartData);
                 setLoading(false);
             } catch (error) {
                 setError(error);
@@ -72,24 +72,33 @@ const Chart = () => {
     const price_change_percentage_24h = isPositive ? `+ ${cryptoData.market_data.price_change_percentage_24h}%` : `${cryptoData.market_data.price_change_percentage_24h}%`;
     const bgColor = isPositive ? 'linear-gradient(to bottom left, #073b3a 0%, #21d375 100%)': 'linear-gradient(to bottom left, #801818 0%, #960018 100%)';
 
+//     // Extracting labels (timestamps) and data values from the chartData
+//   const labels = chartData.map((data) => new Date(data[0]).toLocaleTimeString());
+//   console.log(labels);
+//   const dataValues = chartData.map((data) => data[1]);
 
-    // Extracting labels (timestamps) and data values from the chartData
-  const labels = chartData.map((data) => new Date(data[0]).toLocaleTimeString());
-  const dataValues = chartData.map((data) => data[1]);
-
-  // Chart.js data configuration
-  const chartConfig = {
-    labels: labels,
-    datasets: [
-      {
-        label: 'Price',
-        data: dataValues,
-        fill: false,
-        borderColor: 'rgba(75,192,192,1)',
-        tension: 0.1,
-      },
-    ],
-  };
+//   // Chart.js data configuration
+//   const chartConfig = {
+//     type: 'line',
+//     labels: labels,
+//     datasets: [
+//       {
+//         label: 'Price',
+//         data: dataValues,
+//         fill: false,
+//         borderColor: 'rgba(75,192,192,1)',
+//         tension: 0.1,
+//         borderWidth: 1,
+//       },
+//     ],
+//     options: {
+//         scales: {
+//           y: {
+//             beginAtZero: true
+//           }
+//         }
+//       }
+//   };
 
     return (
         <Box sx={{
@@ -135,7 +144,7 @@ const Chart = () => {
 
       {/* Display the chart */}
       <Typography variant="h6">Price Chart (Last 24 Hours)</Typography>
-      <Line data={chartConfig} />
+      <CryptoChartComponent cryptoChartData={chartData} chartRef={chartRef}/>
     </Box>
             </Box>
             <b style={{ fontSize: '1.2rem'}}>Profile</b>
