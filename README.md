@@ -1,4 +1,4 @@
-## tradEx_frontEnd
+## tradEz_frontEnd
 Welcome to the tradEx frontend repository!
 
 ## Project Overview
