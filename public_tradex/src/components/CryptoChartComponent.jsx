@@ -19,6 +19,7 @@ const CryptoChartComponent = ({ cryptoChartData, chartRef }) => {
             fill: false,
             borderColor: 'rgba(255,255,255,255)',
             tension: 0.1,
+            borderWidth: 1
           },
         ],
       };
@@ -40,7 +41,6 @@ const CryptoChartComponent = ({ cryptoChartData, chartRef }) => {
       <h2>Crypto Price Chart</h2>
       {chartData && <Line data={chartData} options={{
         responsive: true,
-        color: 'white'
       }} />}
     </div>
   );

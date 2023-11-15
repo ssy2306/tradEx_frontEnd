@@ -72,33 +72,6 @@ const Chart = () => {
     const price_change_percentage_24h = isPositive ? `+ ${cryptoData.market_data.price_change_percentage_24h}%` : `${cryptoData.market_data.price_change_percentage_24h}%`;
     const bgColor = isPositive ? 'linear-gradient(to bottom left, #073b3a 0%, #21d375 100%)': 'linear-gradient(to bottom left, #801818 0%, #960018 100%)';
 
-//     // Extracting labels (timestamps) and data values from the chartData
-//   const labels = chartData.map((data) => new Date(data[0]).toLocaleTimeString());
-//   console.log(labels);
-//   const dataValues = chartData.map((data) => data[1]);
-
-//   // Chart.js data configuration
-//   const chartConfig = {
-//     type: 'line',
-//     labels: labels,
-//     datasets: [
-//       {
-//         label: 'Price',
-//         data: dataValues,
-//         fill: false,
-//         borderColor: 'rgba(75,192,192,1)',
-//         tension: 0.1,
-//         borderWidth: 1,
-//       },
-//     ],
-//     options: {
-//         scales: {
-//           y: {
-//             beginAtZero: true
-//           }
-//         }
-//       }
-//   };
 
     return (
         <Box sx={{
