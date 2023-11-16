@@ -125,9 +125,9 @@ const Chart = () => {
             <Typography variant="h6">Number of Users</Typography>
             <Typography variant="body1">{cryptoData.watchlist_portfolio_users}K</Typography>
             <Box sx={{
-                width: '80%',
-
-                justifyItems: 'center'
+                width: '97%',
+                justifyItems: 'center',
+                color: 'white'
             }}>
                 <TopVolumesTable topVolumes={topVolumes} />
             </Box>

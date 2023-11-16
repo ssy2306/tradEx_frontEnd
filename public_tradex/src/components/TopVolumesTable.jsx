@@ -6,13 +6,14 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import { Box } from '@mui/system';
 
 const TopVolumesTable = ({ topVolumes }) => {
   return (
-    <div>
-      <Typography variant="h6">Top 5 Last Traded Volumes</Typography>
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="top-volumes-table">
+    <Box>
+      <Typography variant="h6" style={{ color: 'white' }}>Top 5 Last Traded Volumes</Typography>
+      <TableContainer component={Paper} sx={{ backgroundColor: 'white', color: 'white' }}>
+        <Table aria-label="top-volumes-table">
           <TableHead>
             <TableRow>
               <TableCell>Base</TableCell>
@@ -33,7 +34,7 @@ const TopVolumesTable = ({ topVolumes }) => {
           </TableBody>
         </Table>
       </TableContainer>
-    </div>
+    </Box>
   );
 };
 
