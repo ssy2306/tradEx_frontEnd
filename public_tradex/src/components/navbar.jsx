@@ -42,7 +42,7 @@ const Item2 = styled(Paper)({
 
 function navbar() {
     return (
-        <div className="Navbar" style={{ position: 'fixed',background: '#050505' }}>
+        <div className="Navbar" style={{ position: 'fixed',background: '#050505', borderRight: '20px' , borderStyle: '-moz-initial'}}>
             <Stack spacing={1} >
                 <Item>
                     <img src={logo} className='App-logo' alt="logo" width={120} height={36} style={{ paddingTop: 15 }} />

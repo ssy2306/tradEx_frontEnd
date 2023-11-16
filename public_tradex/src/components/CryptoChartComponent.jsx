@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import {Chart as ChartJS} from 'chart.js/auto';
-const CryptoChartComponent = ({ cryptoChartData, chartRef }) => {
+import { Box } from '@mui/system';
+const CryptoChartComponent = ({ cryptoChartData, chartRef, bg }) => {
+  console.log("bgcolor",bg);
   const [chartData, setChartData] = useState(null);
 
   useEffect(() => {
@@ -9,17 +11,19 @@ const CryptoChartComponent = ({ cryptoChartData, chartRef }) => {
       const labels = cryptoChartData.prices.map((data) => new Date(data[0]).toLocaleTimeString());
       const dataValues = cryptoChartData.prices.map((data) => data[1]);
 
+
       // Chart.js data configuration
       const newChartData = {
         labels: labels,
         datasets: [
           {
-            label: 'Price',
+            label: 'Price in INR',
             data: dataValues,
             fill: false,
-            borderColor: 'rgba(255,255,255,255)',
+            borderColor: bg,
             tension: 0.1,
-            borderWidth: 1
+            borderWidth: 1,
+            color: bg
           },
         ],
       };
@@ -38,11 +42,28 @@ const CryptoChartComponent = ({ cryptoChartData, chartRef }) => {
 
   return (
     <div>
-      <h2>Crypto Price Chart</h2>
       {chartData && <Line data={chartData} options={{
         responsive: true,
-        backgroundColor: 'white',
-        
+        backgroundColor: bg,
+        scales: {
+          x: {
+            ticks: {
+              color: bg, // Change the x-axis text color to red
+            },
+          },
+          y: {
+            ticks: {
+              color: bg, // Change the y-axis text color to blue
+            },
+          },
+        },
+        plugins: {
+          legend: {
+            labels: {
+              color: bg, // Change the legend label color to green
+            },
+          },
+        },
       }} />}
     </div>
   );

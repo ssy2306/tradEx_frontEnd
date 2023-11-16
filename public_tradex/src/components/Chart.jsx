@@ -4,15 +4,18 @@ import { Box, Typography } from '@mui/material';
 import TopVolumesTable from './TopVolumesTable';
 import { Line } from 'react-chartjs-2';
 import CryptoChartComponent from './CryptoChartComponent';
+import Loader from './Loader.jsx'
+import { bgcolor } from '@mui/system';
 
 const Chart = () => {
     // Use the `useParams` hook to access the `id` parameter from the URL
     const { id } = useParams();
     const [chartData, setChartData] = useState(null);
     const [cryptoData, setCryptoData] = useState(null);
-    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const chartRef = useRef(null);
+    const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
         const fetchCryptoData = async () => {
@@ -70,29 +73,28 @@ const Chart = () => {
     const descriptionHtml = { __html: cryptoData.description.en };
     const isPositive = cryptoData.market_data.price_change_percentage_24h > 0;
     const price_change_percentage_24h = isPositive ? `+ ${cryptoData.market_data.price_change_percentage_24h}%` : `${cryptoData.market_data.price_change_percentage_24h}%`;
-    const bgColor = isPositive ? 'linear-gradient(to bottom left, #073b3a 0%, #21d375 100%)' : 'linear-gradient(to bottom left, #801818 0%, #960018 100%)';
-
-
+    const bgColor = isPositive ? '#31C48D': '#FD1F64';
     return (
         <Box sx={{
             marginLeft: '249px',
             paddingTop: '2rem',
             paddingLeft: '2rem',
             paddingBottom: '2rem',
-            background: bgColor,
+            background: "black",
             textDecoration: 'none',
             height: '100%'
         }}>
             <Box sx={{
-                color: 'white',
-                bgcolor: '#000000',
+                
+                bgcolor: '#ffffff',
                 padding: 1,
                 width: '100%',
                 maxWidth: 100,
                 borderRadius: 2,
                 textAlign: 'center',
                 fontSize: '1rem',
-                marginBottom: 2
+                color: 'black'
+                
             }} >
                 Rank #{cryptoData.coingecko_rank}
             </Box>
@@ -103,17 +105,19 @@ const Chart = () => {
                 paddingLeft: 0,
                 alignItems: 'center'
             }}>
-                <p style={{ fontSize: '2rem', margin: 0, }}> {price_change_percentage_24h}</p><br />
-                Last updated - {new Date(cryptoData.last_updated).toLocaleTimeString()}
+                <p style={{ fontSize: '2rem', margin: 0,  fontWeight: 700  }}>
+                {cryptoData.market_data.current_price.inr}   INR
+                </p>
+                <p style={{ fontSize: '1rem', margin: 0, fontWeight: 300 }}> {price_change_percentage_24h}, Last updated : {new Date(cryptoData.last_updated).toLocaleTimeString()}</p><br />
+                
                 <Box sx={{ display: 'flex' }}>
                     <img src={cryptoData.image.large} style={{ width: '60px', height: '60px', marginRight: 15, }} />
-
                     <p style={{ fontSize: '2rem', margin: 0, }}><b>{cryptoData.name} {`(${cryptoData.symbol})`} </b></p>
 
                 </Box>
                 <Box>
-                    <Typography variant="h6">Price Chart (Last 24 Hours)</Typography>
-                    <CryptoChartComponent cryptoChartData={chartData} chartRef={chartRef} />
+                    <Typography sx={{fontWeight: 100, fontSize: 15, marginTop: 2}}>Price Chart (Last 24 Hours)</Typography>
+                    <CryptoChartComponent cryptoChartData={chartData} chartRef={chartRef} bg={bgColor}/>
                 </Box>
             </Box>
             <b style={{ fontSize: '1.2rem' }}>Profile</b>
