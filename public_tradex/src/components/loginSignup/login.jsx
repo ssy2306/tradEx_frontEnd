@@ -12,7 +12,7 @@ const LoginPage = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('/login', formData); // Send a POST request to /login endpoint with the form data
+      const response = await axios.post(' /login', formData); // Send a POST request to /login endpoint with the form data
       // Handle the response here, e.g., set user state or show a success message
       console.log('Login response:', response.data);
     } catch (error) {

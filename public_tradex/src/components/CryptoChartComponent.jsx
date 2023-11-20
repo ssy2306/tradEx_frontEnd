@@ -11,6 +11,10 @@ const CryptoChartComponent = ({ cryptoChartData, chartRef, bg }) => {
       const labels = cryptoChartData.prices.map((data) => new Date(data[0]).toLocaleTimeString());
       const dataValues = cryptoChartData.prices.map((data) => data[1]);
 
+      const gradient = {
+        canvas: null,
+        context: null,
+      };
 
       // Chart.js data configuration
       const newChartData = {
@@ -19,9 +23,17 @@ const CryptoChartComponent = ({ cryptoChartData, chartRef, bg }) => {
           {
             label: 'Price in INR',
             data: dataValues,
-            fill: false,
+            backgroundColor: (ctx) => {
+              // Create a linear gradient
+              gradient.canvas = ctx.canvas;
+              gradient.context = ctx.chart.ctx.createLinearGradient(0, 0, 0, ctx.chart.height);
+              gradient.context.addColorStop(0, bg);  // Start color
+              gradient.context.addColorStop(0.5, 'rgba(0,0, 0, 0.5)');  // Start color
+              gradient.context.addColorStop(1, "rgba(0, 0, 0, 0.01)");  // End color
+              return gradient.context;
+            },
             borderColor: bg,
-            tension: 0.1,
+            tension:0.2,
             borderWidth: 1,
             color: bg
           },
@@ -41,15 +53,22 @@ const CryptoChartComponent = ({ cryptoChartData, chartRef, bg }) => {
   }, [cryptoChartData]);
 
   return (
-    <div>
+    <Box sx={{
+      bgcolor: 'none',
+      borderRadius: 2,
+      padding: 2
+    }}>
       {chartData && <Line data={chartData} options={{
-        responsive: true,
+         responsive: true, // Disable responsive
+         maintainAspectRatio: true, 
         backgroundColor: bg,
         scales: {
           x: {
+            // display: false,   
             ticks: {
               color: bg, // Change the x-axis text color to red
             },
+
           },
           y: {
             ticks: {
@@ -65,7 +84,7 @@ const CryptoChartComponent = ({ cryptoChartData, chartRef, bg }) => {
           },
         },
       }} />}
-    </div>
+    </Box>
   );
 };
 
