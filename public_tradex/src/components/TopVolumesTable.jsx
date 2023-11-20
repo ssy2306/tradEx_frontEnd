@@ -14,8 +14,15 @@ const TopVolumesTable = ({ topVolumes }) => {
       <Typography variant="h6" style={{ color: 'white' }}>Top 5 Last Traded Volumes</Typography>
       <TableContainer component={Paper} sx={{ backgroundColor: 'white', color: 'white' }}>
         <Table aria-label="top-volumes-table">
-          <TableHead>
-            <TableRow>
+          <TableHead sx={{
+              bgcolor: 'black',
+              color : 'white',
+              border: 2,
+              borderRadius: 10,
+            }}>
+            <TableRow sx={{
+              color: 'black'
+            }}>
               <TableCell>Base</TableCell>
               <TableCell>Target</TableCell>
               <TableCell>Last Price</TableCell>

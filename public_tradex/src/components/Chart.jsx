@@ -5,7 +5,7 @@ import TopVolumesTable from './TopVolumesTable';
 import { Line } from 'react-chartjs-2';
 import CryptoChartComponent from './CryptoChartComponent';
 import Loader from './Loader.jsx'
-import { bgcolor } from '@mui/system';
+import { bgcolor, flexbox } from '@mui/system';
 
 const Chart = () => {
     // Use the `useParams` hook to access the `id` parameter from the URL
@@ -108,7 +108,7 @@ const Chart = () => {
                 <p style={{ fontSize: '2rem', margin: 0,  fontWeight: 700  }}>
                 {cryptoData.market_data.current_price.inr}   INR
                 </p>
-                <p style={{ fontSize: '1rem', margin: 0, fontWeight: 300 }}> {price_change_percentage_24h}, Last updated : {new Date(cryptoData.last_updated).toLocaleTimeString()}</p><br />
+                <p style={{ fontSize: '1rem', margin: 0, fontWeight: 300, color: bgColor, display: 'flex' }}> {price_change_percentage_24h} </p><p style={{ fontSize: '1rem', margin: 0, fontWeight: 300 }}> Last updated : {new Date(cryptoData.last_updated).toLocaleTimeString()}</p><br />
                 
                 <Box sx={{ display: 'flex' }}>
                     <img src={cryptoData.image.large} style={{ width: '60px', height: '60px', marginRight: 15, }} />
@@ -131,7 +131,9 @@ const Chart = () => {
             }}>
                 <TopVolumesTable topVolumes={topVolumes} />
             </Box>
-
+            <Box>
+                
+            </Box>
         </Box>
     );
 };
