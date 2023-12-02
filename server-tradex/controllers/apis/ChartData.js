@@ -10,9 +10,6 @@ const ChartData = async (req, res) => {
 
         const labels = chartResponse.data.prices.map((data) => new Date(data[0]).toLocaleTimeString());
         const dataValues = chartResponse.data.prices.map((data) => data[1]);
-
-        console.log(labels);
-
         res.status(200).send({ 
             success: true, 
             labels: labels,
