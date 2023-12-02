@@ -12,7 +12,7 @@ const accountAuthenticated = async (req, res, next) => {
         const check2 = await prisma.lu_user.findFirst({ where:{
             email: userEmail,
             password: userPassword
-        }})
+        }});
 
       if (req.session.user && check2) {
         // console.log("account exists")

@@ -55,7 +55,7 @@ const signUp = async (req, res) => {
             //     await prisma.tests.create({data:{ fk_user_id:user_id.id, test_id: i}});
             // }
 
-            //req.session.user = created_user;
+            req.session.user = created_user;
             res.status(200).send({
                 success: true,
                 message: "Signed Up successfully"

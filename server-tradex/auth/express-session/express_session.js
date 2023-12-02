@@ -6,6 +6,6 @@ module.exports = session({
   saveUninitialized: true,
   store: new MemoryStore(),
 
-  cookie: { maxAge: 30 * 60000 }, //maxage of the cookie is kept 60000 after which the cookie will expire
+  cookie: { maxAge: 30000}, //maxage of the cookie is kept 60000 after which the cookie will expire
   //and user has to login again
 });
