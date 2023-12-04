@@ -41,7 +41,7 @@ const CommentBox = ({ coinId }) => {
       ) : (
         <ul>
           {comments.map((comment) => (
-            <li key={comment.id}>{comment.comment}</li>
+            <li key={comment.message.id}>{comment.message.comment}</li>
           ))}
         </ul>
       )}
