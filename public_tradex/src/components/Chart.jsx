@@ -4,6 +4,7 @@ import { Box, Typography } from '@mui/material';
 import TopVolumesTable from './TopVolumesTable';
 import { Line } from 'react-chartjs-2';
 import CryptoChartComponent from './CryptoChartComponent';
+import CommentBox from './CommentBox.jsx'
 import Loader from './Loader.jsx'
 
 const Chart = () => {
@@ -137,7 +138,7 @@ const Chart = () => {
                     </Box>
                 </Box>
                 <Box>
-              
+                     <CommentBox />
                 </Box>
                 </> ): ( // Display loading spinner when loading is true
                 <Box sx={{

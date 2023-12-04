@@ -12,7 +12,7 @@ const getComments = async (req, res) => {
                 datecreated: 'desc',
             },
         });
-
+console.log("called");
         res.status(200).send({
             success: true,
             message: "Comments retrieved successfully",
