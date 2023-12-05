@@ -12,23 +12,23 @@ const CommentBox = ({ coinId }) => {
           headers: {
             'Content-Type': 'application/json',
           },
-          params: { coinId },  // Pass params as an object
+          params: { id: coinId },
         });
-
-        console.log("->", response);
-
-        if (!response.ok) {
-          throw new Error(`Request failed with status ${response.status}`);
+    
+        console.log("->", response, response.data.success, response.data.comments);
+    
+        if (response.data.success !== true) {
+          throw new Error(`Request failed with message: ${response.data.message}`);
         }
-
-        const data = response.data;  // Access the data directly, no need for response.json()
+    
+        const data = response.data;
         setComments(data.comments);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching comments:', error);
         setLoading(false);
       }
-    }; 
+    };
 
     fetchComments();
   }, [coinId]);
