@@ -1,16 +1,12 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
- provider = "postgresql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-//for user inputs
 model lu_user {
   id           Int     @id @unique(map: "pk_user_id") @default(autoincrement())
   name         String
@@ -18,16 +14,14 @@ model lu_user {
   phone_number String?
   password     String  @db.VarChar(255)
   gtoken       String?
-
 }
 
-//for comment section
-model lu_comment{
-  id           Int     @id @unique(map: "pk_comment_id") @default(autoincrement())
-  userid       String?
-  comment      String?
-  upvote       Int?
-  downvote     Int?  
-  coinid       String?
-  datecreated  DateTime @default(now())  
+model lu_comment {
+  id          Int      @id @unique(map: "pk_comment_id") @default(autoincrement())
+  userid      String?
+  comment     String?
+  upvote      Int?
+  downvote    Int?
+  coinid      String?
+  datecreated DateTime @default(now())
 }
