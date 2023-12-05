@@ -1,0 +1,35 @@
+
+  /* Optionally, change the label color for better visibility */
+  .box .MuiInputLabel-outlined {
+    color: white;
+  }
+  .textbox-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 600px; /* Adjust the maximum width as needed */
+    padding: 20px; /* Add padding if necessary */
+    background-color: black; /* Adjust background color as needed */
+    border-color: white;
+  }
+  .message {
+    margin: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    display: block; /* Ensure each chat bubble appears on a new line */
+    clear: both; /* Clear the float for each message */
+    max-width: 80%; /* Limit the maximum width of the chat bubbles */
+  }
+  
+  .user {
+    background-color: #ccc; /* Change to grey color */
+    align-self: flex-end;
+  }
+  
+  .bot {
+    background-color: #28a745; /* Chatbot's color */
+    align-self: flex-start;
+  }
+  

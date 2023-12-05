@@ -1,0 +1,9 @@
+pandas
+numpy
+pypdf
+langchain
+flask
+beautifulsoup4
+lxml
+sentence-transfomers
+faiss-cpu
