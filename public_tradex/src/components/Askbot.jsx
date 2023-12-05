@@ -1,13 +1,14 @@
-import { Box } from "@mui/system";
-
-const askbot = () => {
-    return ( 
-        <Box sx= {{
-            marginLeft: '270px',
-        }}>
-            <h1>askbot</h1>
-        </Box>
-     );
+import '../../../llm project/Frontend/llm/src/App.css';
+import Navbar from '../../../llm project/Frontend/llm/src/modules/textbox.jsx';
+import MyTextBox from '../../../llm project/Frontend/llm/src/modules/textbox.jsx'
+function Askbot() {
+  return (
+    <div className='App'>
+      <Navbar />
+      <div className='TextBox'><MyTextBox /></div>
+      
+    </div>
+  );
 }
- 
-export default askbot;
+
+export default Askbot;
