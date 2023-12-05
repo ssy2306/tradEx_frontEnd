@@ -93,9 +93,9 @@ const LoginPageRightRegister = ({ formData, setFormData, handleLogin }) => {
                 </Box>
                 
                 <Box sx={{color: theme.palette.text.secondary, textAlign: 'center', marginTop: 5}}>
-                    A new user?
+                    Already a user?
                     <span style={{fontSize: '1 rem', color: theme.palette.text.logoColor}}>
-                        <b> &nbsp; Register Now</b>
+                        <b> &nbsp; Login</b>
                     </span>
                 </Box>
                 <Box >

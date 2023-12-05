@@ -32,6 +32,10 @@ HEATMAP:
 
 CHART: 
 ![image](https://github.com/ssy2306/tradEx_frontEnd/assets/77876285/42aab95a-e8a7-477c-a811-0244fa89c680)
+![image](https://github.com/ssy2306/tradEx_frontEnd/assets/77876285/be7450a7-1820-4883-80a8-1589dcbbd26e)
+![image](https://github.com/ssy2306/tradEx_frontEnd/assets/77876285/c5672f74-67e1-4eb5-b777-5812bc5a8547)
+
+
 
 
 
