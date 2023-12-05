@@ -3,9 +3,10 @@ import { Box } from "@mui/system";
 const community = () => {
     return ( 
         <Box sx={{
-            marginLeft: '270px'
+            marginLeft: '270px',
+            fontSize:  '50px'
         }}>
-            <h1>community</h1>
+            <Box>community</Box>
         </Box>
      );
 }

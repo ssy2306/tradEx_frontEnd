@@ -42,12 +42,16 @@ const loginUser = async (req, res) => {
       const isPasswordValid = await bcrypt.compare(password, hashPassword.password);
 
       if (isPasswordValid) {
+
         const token = generateToken(user);
         res.cookie(token);
-        // res.session.authToken = token;
-        // res.session.user = user;
-        // console.log(req.session.user);
-        // console.log(token);
+       
+        req.session.authToken = token;
+        req.session.user = user;
+        
+        console.log(req.session.user);
+        console.log(token);
+
         res.status(200).send({
           success: true,
           message: "hewwo",

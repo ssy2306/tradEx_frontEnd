@@ -7,7 +7,7 @@ function App() {
   return (  
     <>
     <div  style={{ display: 'flex'}}>
-         <Navbar />   
+        <Navbar />   
         <Outlet />
     </div>
     </>

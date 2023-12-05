@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+ provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -17,4 +17,17 @@ model lu_user {
   email        String  @unique
   phone_number String?
   password     String  @db.VarChar(255)
+  gtoken       String?
+
+}
+
+//for comment section
+model lu_comment{
+  id           Int     @id @unique(map: "pk_comment_id") @default(autoincrement())
+  userid       String?
+  comment      String?
+  upvote       Int?
+  downvote     Int?  
+  coinid       String?
+  datecreated  DateTime @default(now())  
 }
