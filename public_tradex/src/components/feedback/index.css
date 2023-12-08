@@ -1,0 +1,106 @@
+.feedback-form {
+    background-color: #242424;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    margin-left: 275px;
+  }
+  
+  .heading {
+    font-size: 24px;
+  }
+  
+  .subheading {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .question {
+    margin-bottom: 20px;
+  }
+  
+  .star-rating {
+    display: flex;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .star-rating span {
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  .star-rating span:hover,
+  .star-rating span.selected {
+    color: #31c48d;
+  }
+  
+  .rating {
+    font-size: 24px;
+    color: #ffffff; /* Initial color for round selections */
+    cursor: pointer;
+  }
+  
+  .rating:hover,
+  .rating.selected {
+    background-color: #31c48d; /* Round selections turn green on hover and when selected */
+    color: #ffffff; /* Text color inside the selected round selection */
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  table th,
+  table td {
+    border: 1px solid #31c48d;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  table th {
+    background-color: #31c48d;
+    color: #ffffff;
+  }
+  
+  table td.selected {
+    background-color: #31c48d;
+    color: #ffffff;
+  }
+  
+  textarea {
+    width: 100% - 20px;
+    padding: 10px;
+    border: 1px solid #31c48d;
+    border-radius: 5px;
+    margin-top: 10px;
+    resize: vertical;
+  }
+  
+  textarea:focus {
+    outline: none;
+    border-color: #31c48d;
+  }
+  
+  .submit-button {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  button {
+    background-color: #31c48d;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #287a3f; /* Darker green on hover */
+  }

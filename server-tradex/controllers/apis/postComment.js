@@ -3,8 +3,10 @@ const prisma = new PrismaClient();
 
 const postComments = async (req, res) => {
     try {
-        const { userId, comment, upvote, downvote, coinId } = req.body;
-
+        const {  comment, upvote, downvote, id } = req.body;
+        const coinId = req.body.id;
+        // const userId = req.session.user.email;
+        const userId = "abc@gmail.com";
         // Use Prisma Client to create a new comment
         const newComment = await prisma.lu_comment.create({
             data: {

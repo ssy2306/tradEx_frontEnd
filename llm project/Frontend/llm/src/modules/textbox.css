@@ -11,7 +11,7 @@
     width: 100%;
     max-width: 600px; /* Adjust the maximum width as needed */
     padding: 20px; /* Add padding if necessary */
-    background-color: black; /* Adjust background color as needed */
+    background-color: #242424; /* Adjust background color as needed */
     border-color: white;
   }
   .message {
@@ -29,7 +29,7 @@
   }
   
   .bot {
-    background-color: #28a745; /* Chatbot's color */
+    background-color: #31c48d; /* Chatbot's color */
     align-self: flex-start;
   }
   

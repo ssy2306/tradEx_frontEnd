@@ -8,12 +8,13 @@ datasource db {
 }
 
 model lu_user {
-  id           Int     @id @unique(map: "pk_user_id") @default(autoincrement())
-  name         String
-  email        String  @unique
-  phone_number String?
-  password     String  @db.VarChar(255)
-  gtoken       String?
+  id                   Int                    @id @unique(map: "pk_user_id") @default(autoincrement())
+  name                 String
+  email                String                 @unique
+  phone_number         String?
+  password             String                 @db.VarChar(255)
+  gtoken               String?
+  community_chat_table community_chat_table[]
 }
 
 model lu_comment {
@@ -24,4 +25,29 @@ model lu_comment {
   downvote    Int?
   coinid      String?
   datecreated DateTime @default(now())
+}
+
+model community_chat_table {
+  chat_id      Int       @id @default(autoincrement())
+  user_id      Int?
+  chat         String?
+  name         String?   @db.VarChar(255)
+  date_created DateTime? @default(now()) @db.Timestamptz(6)
+  date_updated DateTime? @default(now()) @db.Timestamptz(6)
+  community    Int?
+  lu_user      lu_user?  @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_user")
+}
+
+model feedback_responses {
+  id                          Int       @id @default(autoincrement())
+  usability_rating            Int?
+  statement_ratings_1         Int?
+  statement_ratings_2         Int?
+  statement_ratings_3         Int?
+  statement_ratings_4         Int?
+  statement_ratings_5         Int?
+  overall_satisfaction_rating Int?
+  likes_dislikes              String?
+  other_comments              String?
+  submission_timestamp        DateTime? @default(now()) @db.Timestamp(6)
 }

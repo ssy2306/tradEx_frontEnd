@@ -74,9 +74,10 @@ function navbar() {
                 </Item>
                 <Item2>
                     <Stack spacing={2}>
+                        <Link to="/feedback">
                         <BootstrapButton startIcon={<img src={FeedbackImage} alt="Feedback" style={{ width: '18px', height: '18px', }} />} >
                             Feedback
-                        </BootstrapButton>
+                        </BootstrapButton></Link>
                         <BootstrapButton startIcon={<img src={LogoutImage} alt="logout" style={{ width: '18px', height: '18px' }} />}>
                             Logout
                         </BootstrapButton>

@@ -12,6 +12,7 @@ import Askbot from "./components/askbot";
 import App from "./App"
 import LoginPage from "./components/loginSignup/login";
 import Chart from "./components/Chart"
+import FeedbackForm from "./components/feedback/Feedback";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/chart/:id",
         element: <Chart />
+      },
+      {
+        path: "/feedback",
+        element: <FeedbackForm />
       }
     ],
   },

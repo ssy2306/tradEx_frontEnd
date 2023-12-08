@@ -59,7 +59,7 @@ const ChatBox = ({ sendMessage }) => {
   const renderChatBubbles = () => {
     return chatMessages.map((msg) => {
       const isUser = msg.sender === 'user';
-      const bubbleColor = isUser ? 'blue' : 'green';
+      const bubbleColor = isUser ? 'black' : '#31c48d';
 
       return (
         <Box
@@ -87,6 +87,7 @@ const ChatBox = ({ sendMessage }) => {
   };
 
   return (
+
     <Box
       sx={{
         position: 'fixed',
@@ -95,6 +96,7 @@ const ChatBox = ({ sendMessage }) => {
         left: '350px',
       }}
     >
+      
       {/* Wrapping chat messages in a scrollable container */}
       <Box
         ref={chatContainerRef}
@@ -125,8 +127,10 @@ const ChatBox = ({ sendMessage }) => {
           fullWidth
           sx={{
             borderRadius: '10px',
+            borderStyle: 'dashed',
             flexGrow: 1,
-            backgroundColor: 'transparent',
+            backgroundColor: 'none',
+            padding: 2,
             '& input': {
               color: 'white',
             },

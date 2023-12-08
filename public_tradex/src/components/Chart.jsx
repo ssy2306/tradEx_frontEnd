@@ -138,7 +138,7 @@ const Chart = () => {
                     </Box>
                 </Box>
                 <Box>
-                     <CommentBox />
+                     <CommentBox coinId={cryptoData.id}/>
                 </Box>
                 </> ): ( // Display loading spinner when loading is true
                 <Box sx={{

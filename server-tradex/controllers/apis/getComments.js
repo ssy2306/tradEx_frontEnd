@@ -3,7 +3,7 @@ const prisma = new PrismaClient();
 
 const getComments = async (req, res) => {
     try {
-        const coinId = req.body.coinId;
+        const coinId = req.body.id;
         const comments = await prisma.lu_comment.findMany({
             where: {
                 coinid: coinId,

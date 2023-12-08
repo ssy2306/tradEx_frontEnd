@@ -6,5 +6,5 @@ module.exports = session({
   saveUninitialized: true,
   store: new MemoryStore(),
 
-  cookie: { maxAge: 10*30000},
+  cookie: { maxAge: 10*300000},
 });
