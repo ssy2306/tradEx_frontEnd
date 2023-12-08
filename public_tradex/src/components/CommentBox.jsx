@@ -15,20 +15,9 @@ const CommentBox = ({ coinId }) => {
         };
         console.log(params);
         const response = await axios.get('http://localhost:3000/getComments', {
-<<<<<<< Updated upstream
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          params: { id: coinId },
-        });
-    
-        console.log("->", response, response.data.success, response.data.comments);
-    
-=======
   params});
 
 
->>>>>>> Stashed changes
         if (response.data.success !== true) {
           throw new Error(`Request failed with message: ${response.data.message}`);
         }
@@ -95,9 +84,6 @@ const CommentBox = ({ coinId }) => {
       ) : (
         <div>
           {comments.map((comment) => (
-<<<<<<< Updated upstream
-            <li key={comment.message.id}>{comment.message.comment}</li>
-=======
             <div key={comment.id} style={commentBoxStyle}>
               <div style={userInfoStyle}>
                 <span>{comment.userid || 'Anonymous'}</span>
@@ -105,7 +91,6 @@ const CommentBox = ({ coinId }) => {
               </div>
               <div style={commentTextStyle}>{comment.comment}</div>
             </div>
->>>>>>> Stashed changes
           ))}
         </div>
       )}
