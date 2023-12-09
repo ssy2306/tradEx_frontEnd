@@ -7,7 +7,7 @@ const isAuthenticated = require("../auth/express-session/authenticate");
 const postComments = require('../controllers/apis/postComment');
 const getComments = require('../controllers/apis/getComments');
 const postFeedback = require('../controllers/apis/feedback');
-router.get('/chartData', isAuthenticated, chartData);
+router.get('/chartData', chartData);
 router.post('/postComment',  postComments);
 router.get('/getComments', getComments)
 router.post('/feedback', postFeedback)

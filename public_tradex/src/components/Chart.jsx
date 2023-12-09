@@ -15,6 +15,7 @@ const Chart = () => {
     const [error, setError] = useState(null);
     const chartRef = useRef(null);
     const [loading, setLoading] = useState(true);
+    const [predict, setpredict] = useState(null);
 
 
     useEffect(() => {
@@ -58,7 +59,15 @@ const Chart = () => {
     };
 
     const topVolumes = getTopVolumes();
-
+    
+    const prediction = async ()=> {
+        try{
+            const response = await fetch('http://localhost:5000/predict', {id: id})
+            setpredict(response);
+        }catch (error) {
+            setpredict(error);
+        }
+    };
 
     if (error) {
         return <div>Error: {error.message}</div>;
