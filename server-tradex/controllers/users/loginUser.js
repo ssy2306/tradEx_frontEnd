@@ -54,7 +54,7 @@ const loginUser = async (req, res) => {
 
         res.status(200).send({
           success: true,
-          message: "hewwo",
+          message: "Login Successfull",
           res: token
         });
       } else {

@@ -8,12 +8,7 @@ const postComments = require('../controllers/apis/postComment');
 const getComments = require('../controllers/apis/getComments');
 const postFeedback = require('../controllers/apis/feedback');
 router.get('/chartData', isAuthenticated, chartData);
-<<<<<<< Updated upstream
-router.post('/postComment', isAuthenticated, postComments);
-router.get('/getComments', isAuthenticated, getComments)
-=======
 router.post('/postComment',  postComments);
 router.get('/getComments', getComments)
 router.post('/feedback', postFeedback)
->>>>>>> Stashed changes
 module.exports = router;
