@@ -1,11 +1,11 @@
-## tradEz_frontEnd
-Welcome to the tradEx frontend repository!
+# TradEz_frontEnd
+Welcome to the TradEz frontend repository!
 
 ## Project Overview
-TradEx Insights is a dynamic web-based trading information platform designed to provide cryptocurrency enthusiasts and traders with a comprehensive and interactive experience. This platform combines real-time market data, community engagement features, and predictive machine learning algorithms to empower users in the cryptocurrency trading sphere.
+TradEx is a dynamic web-based trading information platform designed to provide cryptocurrency enthusiasts and traders with a comprehensive and interactive experience. This platform combines real-time market data, community engagement features, and predictive machine learning algorithms to empower users in the cryptocurrency trading sphere.
 
-Backend: 
-The project "Tradez" leverages a robust backend stack, which comprises the following key technologies and components:
+### Backend: 
+TradEz leverages a robust backend stack, which comprises the following key technologies and components:
 
 Node.js: The project's backend is powered by Node.js, a server-side JavaScript runtime, known for its speed and scalability, enabling efficient request handling and response generation.
 
@@ -13,13 +13,14 @@ Express.js: Express.js is employed as the web application framework, facilitatin
 
 Prisma ORM: Tradez utilizes Prisma, an open-source Object-Relational Mapping (ORM) tool, to interact with the database seamlessly. Prisma abstracts database operations and simplifies data management.
 
-SQL Database: The backend integrates a SQL database to securely store user data and application information. SQL databases are widely recognized for their structured data management and relational data capabilities.
+### Database
+SQL Database: The backend integrates a SQL database in Neon to securely store user data and application information. SQL databases are widely recognized for their structured data management and relational data capabilities.
 
-FrontEnd: 
-APIs and Libraries
-Mention any external APIs or libraries you've used in your project.
+Pinecone Database: This encompassed designing and implementing strategies to effectively retrieve and utilize vector data from Pinecone, thereby enhancing the chatbot's responses and accuracy
 
+### FrontEnd: 
 Coingecko API: Used to fetch cryptocurrency data.
+
 Material-UI: Used for styling and UI components.
 
 LOGIN:
